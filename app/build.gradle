@@ -9,7 +9,7 @@ android {
     defaultConfig {
         multiDexEnabled true
         applicationId "sdk.pay.it.evergrandelib.com.paysdk"
-        minSdkVersion VERSION_MIN_SDK as int
+        minSdkVersion 21//VERSION_MIN_SDK as int
         targetSdkVersion 27//VERSION_SDK as int
         versionCode 1
         versionName "1.0"
@@ -52,13 +52,13 @@ android {
 
 dependencies {
  implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:appcompat-v7:${VERSION_SUPPORT}"
+    implementation "com.android.support:appcompat-v7:27.1.0"
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation MUTIDEX_V
+    implementation 'com.android.support:multidex:1.0.2'//MUTIDEX_V
    implementation project(':hdpaysdk')
-    implementation GSON
+    implementation 'com.google.code.gson:gson:2.8.1'//GSON
 
 }
