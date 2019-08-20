@@ -2,12 +2,11 @@ package sdk.pay.it.evergrandelib.com.paysdk;
 
 
 import android.content.Context;
-import android.support.multidex.MultiDex;
+
 import android.support.multidex.MultiDexApplication;
 
-import cn.evergrande.it.common.http.HttpManager;
 import cn.evergrande.it.pos.business.PaymentSDK;
-import cn.evergrande.it.pos.utils.SystemUtil;
+
 
 public class MainApplication extends MultiDexApplication {
 

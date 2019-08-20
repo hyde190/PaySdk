@@ -3,10 +3,7 @@ package sdk.pay.it.evergrandelib.com.paysdk;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,10 +13,7 @@ import com.google.gson.Gson;
 
 import cn.evergrande.it.pos.business.callback.PreInfoCallBack;
 import cn.evergrande.it.pos.jni.EncryptUserKey;
-//import cn.evergrande.it.pos.utils.L;
-import java.util.ArrayList;
-import java.util.List;
-//import cn.evergrande.it.common.http.HttpCallBack;
+
 import cn.evergrande.it.common.zxing.view.QrBarView;
 import cn.evergrande.it.pos.business.bean.CancelResult;
 import cn.evergrande.it.pos.business.PaymentSDK;
@@ -31,9 +25,7 @@ import cn.evergrande.it.pos.business.callback.PayCallBack;
 import cn.evergrande.it.pos.business.callback.QueryPayResultCallBack;
 import cn.evergrande.it.pos.business.callback.RefundCallBack;
 import cn.evergrande.it.pos.network.ResponseCodeEnum;
-
 import cn.evergrande.it.pos.network.entity.PrePaymentResp;
-import sdk.pay.it.evergrandelib.com.paysdk.order.PrePaymentOrderIdResp;
 import sdk.pay.it.evergrandelib.com.paysdk.qrview.QrScanActivity;
 public class PayOrderActivity extends AppCompatActivity implements View.OnClickListener {
     //测试功能函数
