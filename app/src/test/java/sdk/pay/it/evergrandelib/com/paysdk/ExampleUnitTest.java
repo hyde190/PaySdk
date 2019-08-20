@@ -1,4 +1,4 @@
-package com.hd.gradletest;
+package sdk.pay.it.evergrandelib.com.paysdk;
 
 import org.junit.Test;
 

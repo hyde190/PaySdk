@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BScanCActivity"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <cn.evergrande.it.common.zxing.view.QrBarView
+        android:id="@+id/qrImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="fitCenter"
+        app:typeImage="1"
+        app:dataValue="这个是二维码"
+        app:imgWidth="600"
+        />
+
+    <cn.evergrande.it.common.zxing.view.QrBarView
+        android:id="@+id/barImage"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:scaleType="fitCenter"
+        app:typeImage="2"
+        app:dataValue="hjdhdsj23783787483"
+        app:imgWidth="800"
+        app:imgHeight="200"
+        />
+
+</LinearLayout>

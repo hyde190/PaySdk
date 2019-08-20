@@ -1,0 +1,85 @@
+apply plugin: 'org.greenrobot.greendao'
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '28.0.3'
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "0.1"
+        ndk {
+            //选择要添加的对应cpu类型的.so库。  暂时把 x86 去掉，音视频不支持 x86,后面会加上
+            abiFilters 'armeabi-v7a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64' armeabi-v7a ,'armeabi', 'x86' ,'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled true
+            zipAlignEnabled true
+          //  shrinkResources true
+            //shrinkResources true // 是否去除无效的资源文件
+            useProguard true
+          //  signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        //  matchingFallbacks = ['release', 'debug' ]
+        debug {
+            debuggable true
+          //  signingConfig signingConfigs.debug
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+//            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            //   matchingFallbacks = ['release', 'debug' ]
+        }
+
+    }
+
+    greendao {
+        schemaVersion 1
+        daoPackage 'cn.evergrande.it.common.http.database'
+        //targetGenDir 'src/main/java'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation   'io.reactivex.rxjava2:rxjava:2.1.0' //RXJAVA
+    implementation   'io.reactivex.rxjava2:rxandroid:2.1.0'//RXANDROID
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'//RETROFIT
+    implementation ('com.squareup.retrofit2:converter-gson:2.3.0'){//(CONVERTER_GSON) {
+        exclude group: 'com.google.code.gson', module: 'gson'
+    }
+    implementation ('com.squareup.retrofit2:adapter-rxjava2:2.3.0'){//(ADAPTER_RXJAVA2) {
+        exclude group: 'io.reactivex', module: 'rxandroid'
+        exclude group: 'io.reactivex', module: 'rxjava'
+    }
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'//LOGGING_INTERCEPTOR
+    implementation 'com.google.code.gson:gson:2.8.1'//GSON
+    implementation 'org.greenrobot:greendao:3.2.2'//GREENDAO
+    implementation 'com.google.zxing:core:3.3.3'
+
+
+    //引入公共的LOG模块
+    // implementation project(':02-lib-logger')
+    //api project(':common_http')
+    //  api project(':common_zxing')
+    //implementation project(path: ':hdUtils_lib')
+}

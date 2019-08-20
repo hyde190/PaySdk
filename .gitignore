@@ -9,5 +9,8 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
+/hdPaySdk/build
 /captures
 .externalNativeBuild
+local.properties
+
