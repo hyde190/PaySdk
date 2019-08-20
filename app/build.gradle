@@ -5,12 +5,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    compileSdkVersion VERSION_SDK as int
+    compileSdkVersion 27//VERSION_SDK as int
     defaultConfig {
         multiDexEnabled true
         applicationId "sdk.pay.it.evergrandelib.com.paysdk"
         minSdkVersion VERSION_MIN_SDK as int
-        targetSdkVersion VERSION_SDK as int
+        targetSdkVersion 27//VERSION_SDK as int
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
