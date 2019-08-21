@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
 apply from : 'pos.gradle'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.hyde190'
+// group='com.github.你的github用户名'
+
 android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -25,7 +29,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    //引入libs包里面的aar文件
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
